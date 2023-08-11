@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
-import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
   return (
