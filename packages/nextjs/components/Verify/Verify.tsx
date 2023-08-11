@@ -1,16 +1,20 @@
+// TODO: add types for data
 import { useEffect } from "react";
 import { init as OnfidoInit } from "onfido-sdk-ui";
 
 const Verify = () => {
+  console.log(`ONFIDO_SDK_TOKEN: ${process.env.NEXT_PUBLIC_ONFIDO_SDK_TOKEN}`);
+  console.log(`ONFIDO_WORKFLOW_RUN_ID: ${process.env.NEXT_PUBLIC_ONFIDO_WORKFLOW_RUN_ID}`);
+
   useEffect(() => {
     // TODO: add these to .env
     OnfidoInit({
-      token: "<YOUR_SDK_TOKEN>",
+      token: process.env.NEXT_PUBLIC_ONFIDO_SDK_TOKEN,
       containerId: "onfido-mount",
       onComplete: function (data) {
-        console.log("everything is complete");
+        console.log(`everything is complete ${data}`);
       },
-      workflowRunId: "<YOUR_WORKFLOW_RUN_ID>",
+      workflowRunId: process.env.NEXT_PUBLIC_ONFIDO_WORKFLOW_RUN_ID,
     });
   }, []);
 

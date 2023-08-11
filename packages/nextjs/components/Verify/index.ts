@@ -1,3 +1,3 @@
-import Verify from './Verify';
+import Verify from "./Verify";
 
-export Verify;
+export default Verify;

@@ -18,8 +18,8 @@ describe("<Verify />", () => {
 
   it("initializes Onfido with correct parameters", () => {
     // TODO: add these to .env
-    const token = "<YOUR_SDK_TOKEN>";
-    const workflowRunId = "<YOUR_WORKFLOW_RUN_ID>";
+    const token = process.env.ONFIDO_SDK_TOKEN;
+    const workflowRunId = process.env.ONFIDO_WORKFLOW_RUN_ID;
     render(<Verify />);
 
     expect(OnfidoInit).toHaveBeenCalledWith({
