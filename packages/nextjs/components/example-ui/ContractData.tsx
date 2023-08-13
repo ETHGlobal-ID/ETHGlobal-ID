@@ -90,8 +90,8 @@ export const ContractData = () => {
               }`}
             />
           </button>
-          <div className="bg-secondary border border-primary rounded-xl flex">
-            <div className="p-2 py-1 border-r border-primary flex items-end">Total count</div>
+          <div className="flex border bg-secondary border-primary rounded-xl">
+            <div className="flex items-end p-2 py-1 border-r border-primary">Total count</div>
             <div className="text-4xl text-right min-w-[3rem] px-2 py-1 flex justify-end font-bai-jamjuree">
               {totalCounter?.toString() || "0"}
             </div>
@@ -122,7 +122,7 @@ export const ContractData = () => {
           </div>
         </div>
 
-        <div className="mt-3 flex items-end justify-between">
+        <div className="flex items-end justify-between mt-3">
           <button
             className={`btn btn-circle btn-ghost border border-primary hover:border-primary w-12 h-12 p-1 bg-neutral flex items-center ${
               isRightDirection ? "justify-start" : "justify-end"
@@ -133,7 +133,7 @@ export const ContractData = () => {
               }
             }}
           >
-            <div className="border border-primary rounded-full bg-secondary w-2 h-2" />
+            <div className="w-2 h-2 border rounded-full border-primary bg-secondary" />
           </button>
           <div className="w-44 p-0.5 flex items-center bg-neutral border border-primary rounded-full">
             <div
