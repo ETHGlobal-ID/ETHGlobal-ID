@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -12,7 +13,14 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-black bg-white">
-      <img src="/logo.svg" alt="ETHGlobal ID" className="mb-8" width={600} />
+      <Image
+        src="/logo.svg"
+        alt="ETHGlobal ID"
+        className="mb-8"
+        width={600}
+        height={600}
+        style={{ width: "100%", height: "100%", maxWidth: "600px", maxHeight: "600px" }}
+      />
       <button className="px-8 py-2 mb-10 text-white bg-blue-500 rounded-full" onClick={() => alert("Sign Up")}>
         Get Your ETHGlobal ID
       </button>
