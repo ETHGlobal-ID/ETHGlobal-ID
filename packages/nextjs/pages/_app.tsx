@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
 import { RainbowKitProvider, darkTheme, lightTheme } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import NextNProgress from "nextjs-progressbar";
@@ -18,9 +19,14 @@ import "~~/styles/globals.css";
 const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
   const price = useNativeCurrencyPrice();
   const setNativeCurrencyPrice = useGlobalState(state => state.setNativeCurrencyPrice);
-  // This variable is required for initial client side rendering of correct theme for RainbowKit
   const [isDarkTheme, setIsDarkTheme] = useState(true);
   const { isDarkMode } = useDarkMode();
+  const router = useRouter();
+  const isIndexPage =
+    router.pathname === "/" ||
+    router.pathname === "/about" ||
+    router.pathname === "/roadmap" ||
+    router.pathname === "/join-the-team";
 
   useEffect(() => {
     if (price > 0) {
@@ -41,11 +47,11 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
         theme={isDarkTheme ? darkTheme() : lightTheme()}
       >
         <div className="flex flex-col min-h-screen">
-          <Header />
+          {!isIndexPage && <Header />}
           <main className="relative flex flex-col flex-1">
             <Component {...pageProps} />
           </main>
-          <Footer />
+          {!isIndexPage && <Footer />}
         </div>
         <Toaster />
       </RainbowKitProvider>

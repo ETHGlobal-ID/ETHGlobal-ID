@@ -15,6 +15,7 @@
     "test": "yarn jest --config /Users/defiw0lf/Projects/ethglobalid/packages/nextjs/jest.config.js"
   },
   "dependencies": {
+    "@ethereum-attestation-service/eas-sdk": "^1.1.0-beta.1",
     "@ethersproject/providers": "~5.7.2",
     "@heroicons/react": "~2.0.11",
     "@rainbow-me/rainbowkit": "~1.0.4",
