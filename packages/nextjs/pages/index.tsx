@@ -21,10 +21,13 @@ export default function Home() {
         height={600}
         style={{ width: "100%", height: "100%", maxWidth: "600px", maxHeight: "600px" }}
       />
-      <button className="px-8 py-2 mb-10 text-white bg-blue-500 rounded-full" onClick={() => alert("Sign Up")}>
+      <button
+        className="px-8 py-2 mb-10 text-white bg-blue-500 rounded-full"
+        onClick={() => alert("Will be live after ETHGlobal NYC 9/24/23")}
+      >
         Get Your ETHGlobal ID
       </button>
-      <div className="text-gray-500">
+      <div className="mb-10 text-gray-500">
         <Link href="/join-the-team" className="mx-2">
           Join The Team
         </Link>{" "}
@@ -40,6 +43,14 @@ export default function Home() {
         <Link href="mailto:info@ethglobalid.com" className="mx-2">
           Contact
         </Link>
+      </div>
+      <div className="flex mt-4">
+        <a href="https://twitter.com/ethglobalid" target="_blank" rel="noopener noreferrer" className="mx-2">
+          <Image src="/twitter.svg" alt="Twitter" width={24} height={24} />
+        </a>
+        <a href="https://github.com/ethglobalid" target="_blank" rel="noopener noreferrer" className="mx-2">
+          <Image src="/github.svg" alt="GitHub" width={24} height={24} />
+        </a>
       </div>
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
